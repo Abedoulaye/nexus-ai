@@ -6,7 +6,7 @@ An AI chat application built with React, TypeScript, and the Groq API. Have real
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://nexus-ai-chat.vercel.app)
+[View Live Demo](https://nexus-qpcmhtcrj-abedoulaye.vercel.app/)
 
 ## ✨ Features
 
