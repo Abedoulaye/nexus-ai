@@ -1,77 +1,102 @@
-# React + TypeScript + Vite
+# Nexus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI chat application built with React, TypeScript, and the Groq API. Have real-time conversations with an AI assistant, manage multiple chat threads, and persist your conversation history — all client-side.
 
-Currently, two official plugins are available:
+![Nexus Screenshot](./src/assets/AI-screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+[View Live Demo](https://nexus-ai-chat.vercel.app)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ✨ Features
 
-Note: This will impact Vite dev & build performances.
+- **Multi-Chat Support** — Create, switch between, and manage multiple conversation threads
+- **Real-Time AI Responses** — Powered by Groq's fast inference API with Llama 3.1
+- **Persistent Storage** — Conversations saved to localStorage, survive page reloads
+- **Dark Theme** — Clean, modern dark interface designed for readability
+- **Responsive Layout** — Two-column grid with collapsible sidebar
+- **TypeScript** — Fully typed for better developer experience and fewer bugs
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Technology   | Purpose             |
+| ------------ | ------------------- |
+| React        | UI framework        |
+| TypeScript   | Type safety         |
+| Tailwind CSS | Styling             |
+| Groq API     | AI chat completions |
+| localStorage | Data persistence    |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository**
+   ```
+   git clone https://github.com/abedoulaye/nexus
+   cd nexus
+   ```
 
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
 
+3. Set up environment variables
+
+Create a .env file in the project root:
+```
+
+VITE_GROQ_API_KEY=your_groq_api_key_here
+
+```
+Get your free API key at console.groq.com
+
+4. Start the development server
+```
+
+npm run dev
+
+```
+5. Open http://localhost:5173 in your browser
+
+
+## Project Structure
+```
+
+text
+nexus/
+├── src/
+│ ├── App.tsx # Main application component
+│ ├── main.tsx # Entry point
+│ └── index.css # Tailwind imports
+├── .env # Environment variables (gitignored)
+├── package.json
+└── README.md
+
+```
+
+## 🔑 API
+This project uses the Groq API with the llama-3.1-8b-instant model. The free tier includes generous usage limits — no credit card required to get started.
+
+## 📝 What I Learned
+Managing complex nested state with React's useState
+
+Implementing multi-conversation architecture with chat history
+
+Persisting and hydrating state from localStorage
+
+Integrating third-party AI APIs with proper error handling
+
+Building responsive dark-themed UIs with Tailwind CSS
+
+TypeScript interfaces for nested data structures
+
+📄 License
+MIT
+
+
+---
 ```
